@@ -1,6 +1,7 @@
 import React from "react";
 import "./index.css";
 import { TransactionContainer } from "./TransactionContainer";
+import Calculator from "./Calculator";
 
 const GroupView = (props) => {
 
@@ -11,7 +12,9 @@ const GroupView = (props) => {
           GROUP VIEW
         </h1>
       </div>
-      <TransactionContainer/>
+      {/* <TransactionContainer/> */}
+      <Calculator/>
+      
     </div>
   );
 };

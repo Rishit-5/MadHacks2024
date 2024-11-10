@@ -1,17 +1,21 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import GroupView from './GroupView'; // Ensure this is the correct import path
+import { useRef } from 'react';
+import { useState } from 'react';
 
 function LandingPage() {
+
+  const [groupName, setGroupName] = useState('');
   return (
     <div style={styles.container}>
       <header style={styles.header}>
         <h1 style={styles.title}>Welcome to Spli.tech</h1>
         <p style={styles.subtitle}>Effortlessly manage and balance group expenses with friends.</p>
-        <Link to="/example-group" style={styles.button}>
-          Get Started
-        </Link>
       </header>
+      <input type="text" placeholder="Enter group name" style={{ padding: '0.5rem', fontSize: '1rem', borderRadius: '5px', border: '1px solid #ccc', margin: '1rem 0', marginBottom: '1rem', textAlign: 'center' }} 
+          onChange={e => setGroupName(e.target.value)} />
+        <Link to={groupName} style={styles.button}>Get Started</Link>
       <section style={styles.features}>
         <h2 style={styles.sectionTitle}>Why Choose Spli.tech?</h2>
         <div style={styles.featureList}>
@@ -24,8 +28,8 @@ function LandingPage() {
             <p>Track who owes what and keep tabs on every transaction.</p>
           </div>
           <div style={styles.featureItem}>
-            <h3>Quick Payments</h3>
-            <p>Make payments easily and settle debts with one click.</p>
+            <h3>Add Anyone</h3>
+            <p>Whether someone decideds to sign up or not, everyone can use our system.</p>
           </div>
         </div>
       </section>
@@ -76,15 +80,16 @@ const styles = {
     marginBottom: '1.5rem',
   },
   button: {
-    marginTop: '1.5rem',
+    // marginTop: '1.5rem',
     padding: '0.75rem 2rem',
-    fontSize: '1rem',
+    fontSize: '1.2rem',
     backgroundColor: '#007BFF',
     color: '#fff',
     textDecoration: 'none',
     borderRadius: '5px',
     cursor: 'pointer',
     display: 'inline-block',
+    marginBottom: '1rem'
   },
   features: {
     textAlign: 'center',

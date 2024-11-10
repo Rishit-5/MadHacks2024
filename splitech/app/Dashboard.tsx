@@ -11,7 +11,7 @@ import {getDatabase, ref, get, set, remove} from 'firebase/database';
 import {encodeEmail} from './utils';
 import * as Linking from 'expo-linking';
 
-const URL_HOST = 'exp://192.168.1.188:8081';
+const URL_HOST = 'https://webapp-woad-psi.vercel.app';
 
 
 const data = [
